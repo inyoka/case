@@ -1,11 +1,78 @@
 {% extends "base.html" %}
-
+{% load static wagtailuserbar %}
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    <h1>Welcome to your new Wagtail site!</h1>
 
-    <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).</p>
 
-    <p>If you haven't already given the documentation a read, head over to <a href="http://docs.wagtail.io/">http://docs.wagtail.io</a> to start building on Wagtail</p>
-{% endblock %}
+<main class="container">
+
+  <section  id="sectionOne">
+    <article class="intro kids">
+      <p class="triangle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="square"></div>
+    </article>
+    <article class="intro highschool">
+      <p class="triangle2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="square"></div>
+      <div class="arrow-up">
+
+      </div>
+    </article>
+    <article class="intro business">
+      <p class="speech ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="square"></div>
+    </article>
+  </section>
+
+  <h2>What our students say...</h2>
+
+  <section id="sectionTwo">
+    <article class="testimonial kids">
+      <div class="small-square"></div>
+      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+    </article>
+    <article class="testimonial highschool">
+      <div class="small-square"></div>
+      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+    </article>
+    <article class="testimonial business">
+      <div class="small-square"></div>
+      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <div id="contact" class="container">
+    <span class="case">
+      <img class="caseLogo" src="{% static "img/case.svg" %}" alt="CaSE "/>
+    </span>
+
+
+    <span id="address" class="case alamat">
+      <table>
+        <tr><td>CASE 1: </td></tr>
+        <tr><td>The Crown Estate 21-23, Jl. Letjend. S. Parman, Medan 20153</td></tr>
+        <tr><td>061 777 7777</td></tr>
+        <tr>
+          <td><br></td>
+
+        </tr>
+        <tr><td>CASE 2: </td></tr>
+        <tr><td>Bundaran Cemara Asri, Medan 20371</td></tr>
+        <tr><td>061 777 6666</td></tr>
+      </table>
+    </span>
+
+    <span>
+      <p>Affiliated with: </p>
+      <p>
+        <img class="kumalaLogo" src="{% static "img/kumala.svg" %}" alt="Kumala "/>
+        <img class="ipacLogo" src="{% static "img/ipac.svg" %}" alt="IPAC "/></p>
+      </span>
+    </div>
+  </footer>
+
+  {% endblock %}
