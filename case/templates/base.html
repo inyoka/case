@@ -2,39 +2,81 @@
 
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                {% with self.get_site.site_name as site_name %}
-                    {% if site_name %}- {{ site_name }}{% endif %}
-                {% endwith %}
-            {% endblock %}
-        </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {% block title %}
+    {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+    {% endblock %}
+    {% block title_suffix %}
+    {% with self.get_site.site_name as site_name %}
+    {% if site_name %}- {{ site_name }}{% endif %}
+    {% endwith %}
+    {% endblock %}
+  </title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/case.css' %}">
+  {# Global stylesheets #}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/case.css' %}">
+  <script type="text/javascript" src="{% static 'fontawesome/js/all.js' %}"></script>
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
-    </head>
+  {% block extra_css %}
+  {# Override this in templates to add extra stylesheets #}
+  {% endblock %}
+</head>
 
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+<body class="{% block body_class %}{% endblock %}">
+  {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+  <header class="container">
+    <span class="case">
+      <img class="caseLogo" src="{% static "img/case.svg" %}" alt="CaSE "/>
+    </span>
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/case.js' %}"></script>
+    <div id="social" class="fa-2x">
+      <span class="fa-layers  ">
+        <i class="fas fa-circle"></i>
+        <i class="fa-inverse fas fa-envelope" data-fa-transform="shrink-6"></i>
+      </span>
+      <span class="fa-layers">
+        <i class="fas fa-circle"></i>
+        <i class="fa-inverse fab fa-instagram" data-fa-transform="shrink-6"></i>
+      </span>
+      <span class="fa-layers">
+        <i class="fas fa-circle"></i>
+        <i class="fa-inverse fab fa-facebook-f" data-fa-transform="shrink-6"></i>
+      </span>
+    </div>
+  </header>
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
+  <nav class="container navbar navbar-expand-lg navbar-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mr-auto">
+        <a class="nav-item nav-link active" href="#">About <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="#">Programs</a>
+        <a class="nav-item nav-link active" href="#">Contact Us</a>
+      </div>
+      <div class="navbar-nav">
+        <a id="test" class="nav-item nav-link active" href="#">Win free vouchers<br>free English Trial</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  {% block content %}{% endblock %}
+
+  {# Global javascript #}
+  <script type="text/javascript" src="{% static 'js/case.js' %}"></script>
+
+  {% block extra_js %}
+  {# Override this in templates to add extra javascript #}
+  {% endblock %}
+</body>
 </html>
