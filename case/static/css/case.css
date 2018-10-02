@@ -159,6 +159,66 @@ p{
   font-size: 1.5em;
 }
 
+/* Code from here but improved : https://leaverou.github.io/bubbly/ */
+
+.up, .down, .left, .right{
+	position: relative;
+	background: lightpink;
+	border-radius: .4em;
+}
+
+.up:after, .down:after, .left:after, .right:after{
+  content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 1.5em solid transparent;
+}
+
+.up:after {
+  top: 0;
+  left: 50%;
+	border-bottom-color: lightpink;
+	border-top: 0;
+	margin-left: -1.5em;
+	margin-top: -1.5em;
+  /* border-left: 0; border-right: 0; */
+  border-left: 0;
+}
+
+.down:after {
+  bottom: 0;
+  left: 50%;
+	border-top-color: lightpink;
+	border-bottom: 0;
+	margin-left: -1.5em;
+	margin-bottom: -1.5em;
+  /* border-left: 0; border-right: 0; */
+  border-left: 0;
+}
+
+
+.left:after {
+  left: 0;
+  top: 50%;
+	border-right-color: lightpink;
+	border-left: 0;
+	margin-top: -1.5em;
+	margin-left: -1.5em;
+  /* border-bottom: 0; border-top: 0; */
+  border-top: 0;
+}
+
+.right:after {
+  right: 0;
+  top: 50%;
+	border-left-color: lightpink;
+	border-right: 0;
+	margin-top: -1.5em;
+	margin-right: -1.5em;
+  /* border-bottom: 0; border-top: 0; */
+  border-top: 0;
+}
 .square{
   width: 200px;
   height: 200px;
