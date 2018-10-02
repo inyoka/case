@@ -1,0 +1,166 @@
+/* This file is ordered by specificity as follows ... */
+/* Semantic Sections, Content Elements, Classes and then ID's */
+/* Media selectors follow after the main CSS, and follow the same layout. */
+
+/* SYMANTIC SECTIONS */
+
+section{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0px;
+}
+
+article{
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  margin: 10px 10px;
+}
+
+article p{
+  max-width: 300px;
+}
+
+/* CONTENT TYPE */
+
+h2{
+  padding: 10px 10px;
+}
+
+p{
+  min-width: 200px;
+  text-align: center;
+  margin: 10px;
+}
+
+/* CLASSESS */
+
+.flexrow{
+  display: flex;
+  flex-direction: column;
+}
+
+.intro, .block-paragraph{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Code from here but improved : https://leaverou.github.io/bubbly/ */
+
+.up, .down, .left, .right{
+	position: relative;
+	background: lightgrey;
+	border-radius: .4em;
+}
+
+.up:after, .down:after, .left:after, .right:after{
+  content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 1.5em solid transparent;
+}
+
+.up:after {
+  top: 0;
+  left: 50%;
+	border-bottom-color: lightgrey;
+	border-top: 0;
+	margin-left: -1.5em;
+	margin-top: -1.5em;
+  /* border-left: 0; border-right: 0; */
+  border-left: 0;
+}
+
+.down:after {
+  bottom: 0;
+  left: 50%;
+	border-top-color: lightgrey;
+	border-bottom: 0;
+	margin-left: -1.5em;
+	margin-bottom: -1.5em;
+  /* border-left: 0; border-right: 0; */
+  border-left: 0;
+}
+
+.left:after {
+  left: 0;
+  top: 50%;
+	border-right-color: lightgrey;
+	border-left: 0;
+	margin-top: -1.5em;
+	margin-left: -1.5em;
+  /* border-bottom: 0; border-top: 0; */
+  border-top: 0;
+}
+
+.right:after {
+  right: 0;
+  top: 50%;
+	border-left-color: lightgrey;
+	border-right: 0;
+	margin-top: -1.5em;
+	margin-right: -1.5em;
+  /* border-bottom: 0; border-top: 0; */
+  border-top: 0;
+}
+
+.square{
+  width: 300px;
+  height: 300px;
+  background: lightsalmon;
+  min-width: 300px;
+}
+
+.small-square{
+  width: 150px;
+  height: 150px;
+  background: orange;
+  min-width: 150px;
+}
+
+/* SPECIFIC ID'S  */
+#sectionTwo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+
+
+#sectionTwo p{
+  min-width: 150px;
+}
+
+/*
+Media Selectors ...
+Sizes sm 576, md 768, lg 992, and xl 1200px.
+*/
+
+@media (min-width: 576px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {
+
+  main {
+  flex: 1;
+  }
+  section{
+    flex-direction: row;
+  }
+  #sectionTwo{
+    flex-wrap: nowrap;
+  }
+  .intro:nth-child(2) {
+      flex-direction: column-reverse;
+  }
+
+}
+@media (min-width: 1200px) {}
