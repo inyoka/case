@@ -1,4 +1,5 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar  %}
+{% load wagtailcore_tags %}
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -28,7 +29,7 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-  {% wagtailuserbar %}
+  {% wagtailuserbar 'top-right' %}
 
   <header class="container">
     <span class="case">
