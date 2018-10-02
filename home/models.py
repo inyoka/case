@@ -1,3 +1,5 @@
+from .blocks import *
+
 from django.db import models
 
 from wagtail.core.models import Page
@@ -7,7 +9,6 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 
 class HomePage(Page):
-    pass
     sectionOneA = StreamField([
         ('paragraph', blocks.RichTextBlock('texter')),
         ('image', ImageChooserBlock('imager')),
@@ -42,3 +43,15 @@ class HomePage(Page):
         StreamFieldPanel('sectionTwoB'),
         StreamFieldPanel('sectionTwoC'),
     ]
+
+
+class ContactPage(Page):
+    section = StreamField([
+        ('heading', blocks.CharBlock(classname="full title",icon="title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock(icon="image")),
+        ('two_columns', TwoColumnBlock()),
+        ('embedded_video', EmbedBlock(icon="media")),
+    ],null=True,blank=True)
+
+    content_panels = Page.content_panels + [ StreamFieldPanel('section') ]
