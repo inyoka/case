@@ -1,26 +1,27 @@
 {% extends "base.html" %}
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar  %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
 
 
-<main class="container">
 
   <section  id="sectionOne">
-    <article class="intro kids">
-      <p class="triangle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <article class="intro">
+      <span class="down">{{ page.sectionOneC }}</span>
       <div class="square"></div>
     </article>
-    <article class="intro highschool">
-      <p class="triangle2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <article class="intro">
+      <span class="up">{{ page.sectionOneC }}</span>
       <div class="square"></div>
-      <div class="arrow-up">
-
-      </div>
     </article>
     <article class="intro business">
-      <p class="speech ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <span class="down">{{ page.sectionOneC }}</span>
       <div class="square"></div>
     </article>
   </section>
@@ -28,22 +29,19 @@
   <h2>What our students say...</h2>
 
   <section id="sectionTwo">
-    <article class="testimonial kids">
+    <article class="testimonial">
       <div class="small-square"></div>
-      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+        <span class="left">{{ page.sectionTwoA }}</span>
     </article>
-    <article class="testimonial highschool">
+    <article class="testimonial">
       <div class="small-square"></div>
-      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+      <span class="left">{{ page.sectionTwoB }}</span>
     </article>
-    <article class="testimonial business">
+    <article class="testimonial ">
       <div class="small-square"></div>
-      <p>"Lorem Ipsum when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+      <span class="left">{{ page.sectionTwoC }}</span>
     </article>
   </section>
 
-</main>
 
-
-
-  {% endblock %}
+{% endblock %}
